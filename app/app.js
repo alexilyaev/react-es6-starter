@@ -10,7 +10,7 @@ import Root from './components/root/root';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={ Root }/>
+      <Route path="/" component={ Root }/>
     </Switch>
   </BrowserRouter>,
   document.querySelector('#root')

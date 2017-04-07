@@ -4,10 +4,8 @@
   "description": "A boilerplate for React projects with Webpack and ES6",
   "scripts": {
     "start": "webpack-dev-server --hot --progress",
-    "prebuild": "npm prune; npm install",
-    "build": "NODE_ENV=production webpack -p --progress",
-    "prebuildwin": "npm prune&npm install",
-    "buildwin": "set NODE_ENV=production&webpack -p --progress",
+    "prebuild": "npm prune&npm install",
+    "build": "cross-env NODE_ENV=production webpack -p --progress",
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
     "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
     "lint": "npm run lintjs && npm run lintcss"
@@ -29,6 +27,7 @@
     "babel-preset-react": "6.23.0",
     "babel-runtime": "6.23.0",
     "clean-webpack-plugin": "0.1.16",
+    "cross-env": "4.0.0",
     "css-loader": "0.27.3",
     "eslint": "3.19.0",
     "eslint-config-react": "1.1.7",
