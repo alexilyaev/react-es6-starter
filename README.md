@@ -11,7 +11,8 @@ Features
 
 - Webpack 2
 - React Hot Loader v3
+- React Router v4
 - Sass support
 - PostCSS plugins support. Settings at `postcss.config.js` (e.g. Autoprefixer).
-- Stylelint - Lints all `scss` files on changes. Rules at `.stylelintrc`.
-- ESLint - Lints all `js` files on changes. Rules at `.eslintrc`.
+- Stylelint - Lints `scss` files on changes. Rules at `.stylelintrc`.
+- ESLint - Lints `js` files on changes. Rules at `.eslintrc`.
