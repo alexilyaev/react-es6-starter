@@ -1,2 +1,17 @@
-# react-es6-starter
-A boilerplate for React projects with Webpack and ES6
+React ES6 Starter
+==================
+
+Setup
+-------
+
+Run `npm install` and then `npm start`
+
+Features
+----------
+
+- Webpack 2
+- React Hot Loader v3
+- Sass support
+- PostCSS plugins support. Settings at `postcss.config.js` (e.g. Autoprefixer).
+- Stylelint - Lints all `scss` files on changes. Rules at `.stylelintrc`.
+- ESLint - Lints all `js` files on changes. Rules at `.eslintrc`.

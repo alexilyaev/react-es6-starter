@@ -1,0 +1,52 @@
+{
+  "name": "react-es6-starter",
+  "version": "0.0.0",
+  "description": "A boilerplate for React projects with Webpack and ES6",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress",
+    "prebuild": "npm prune; npm install",
+    "build": "NODE_ENV=production webpack -p --progress",
+    "prebuildwin": "npm prune&npm install",
+    "buildwin": "set NODE_ENV=production&webpack -p --progress",
+    "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
+    "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
+    "lint": "npm run lintjs && npm run lintcss"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "6.0.0",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-router-dom": "4.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.7.7",
+    "babel-core": "6.24.0",
+    "babel-eslint": "7.2.1",
+    "babel-loader": "6.4.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-react": "6.23.0",
+    "babel-runtime": "6.23.0",
+    "clean-webpack-plugin": "0.1.16",
+    "css-loader": "0.27.3",
+    "eslint": "3.19.0",
+    "eslint-config-react": "1.1.7",
+    "eslint-loader": "1.7.1",
+    "eslint-plugin-babel": "4.1.1",
+    "eslint-plugin-react": "6.10.3",
+    "expose-loader": "0.7.3",
+    "file-loader": "0.10.1",
+    "html-webpack-plugin": "2.28.0",
+    "node-sass": "4.5.1",
+    "postcss-loader": "1.3.3",
+    "react-hot-loader": "3.0.0-beta.6",
+    "sass-loader": "6.0.3",
+    "style-loader": "0.16.0",
+    "stylelint": "7.10.1",
+    "stylelint-webpack-plugin": "0.7.0",
+    "url-loader": "0.5.8",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.2"
+  }
+}
