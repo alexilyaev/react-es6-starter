@@ -8,7 +8,8 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
     "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
-    "lint": "npm run lintjs && npm run lintcss"
+    "lint": "npm run lintjs && npm run lintcss",
+    "eslint-find-unused-rules": "eslint-find-rules -u .eslintrc -n"
   },
   "license": "MIT",
   "dependencies": {
@@ -31,6 +32,7 @@
     "css-loader": "0.27.3",
     "eslint": "3.19.0",
     "eslint-config-react": "1.1.7",
+    "eslint-find-rules": "1.14.3",
     "eslint-loader": "1.7.1",
     "eslint-plugin-babel": "4.1.1",
     "eslint-plugin-react": "6.10.3",
