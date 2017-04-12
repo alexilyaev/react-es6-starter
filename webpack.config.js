@@ -5,9 +5,9 @@ const webpack = require('webpack');
 const path    = require('path');
 
 // Load Webpack Plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanPlugin       = require('clean-webpack-plugin');
-const StyleLintPlugin   = require('stylelint-webpack-plugin');
+const HtmlWebpackPlugin  = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin    = require('stylelint-webpack-plugin');
 
 // Settings
 const appEnv            = process.env.NODE_ENV || 'development';
@@ -40,7 +40,6 @@ const config = {
   },
 
   plugins: [
-
     // Generate index.html with included script tags
     new HtmlWebpackPlugin({
       inject: 'body',
@@ -48,7 +47,7 @@ const config = {
       filename: 'index.html'
     }),
 
-    // Lint CSS/SCSS files
+    // Lint style files
     new StyleLintPlugin({
       syntax: 'scss'
     }),
@@ -67,51 +66,67 @@ const config = {
   ],
 
   module: {
-
     rules: [
-      // Lint JS files
+      // Lint JS files (pre-loader)
       {
         enforce: 'pre',
         test: /\.js$/,
-        loaders: [
+        use: [
           'eslint-loader'
         ],
         exclude
       },
 
-      // Transpile ES6 and enable Hot Reload
+      // Transpile JS code
       {
         test: /\.js$/,
-        use: 'babel-loader?cacheDirectory',
+        use: [
+          'babel-loader?cacheDirectory=true'
+        ],
         exclude
       },
 
-      // Allow `require`ing SCSS files
+      // Allow importing SCSS files
       {
         test: /\.scss$/,
-        loaders: [
+        use: [
           'style-loader',
-          'css-loader?root=' + encodeURIComponent(appPath),
+          {
+            loader: 'css-loader',
+            options: { root: appPath }
+          },
           'postcss-loader',
-          'sass-loader?includePaths[]=' + encodeURIComponent(appPath)
+          {
+            loader: 'sass-loader',
+            options: { includePaths: [appPath] }
+          }
         ],
         exclude: exclude
       },
 
-      // Allow `require`ing CSS files
+      // Allow importing CSS files
       {
         test: /\.css$/,
-        loaders: [
+        use: [
           'style-loader',
-          'css-loader?root=' + encodeURIComponent(appPath)
+          {
+            loader: 'css-loader',
+            options: { root: appPath }
+          }
         ]
       },
 
-      // Allow `require`ing image/font files (also when included in CSS)
-      // Inline assets under 5kb as Base64 data URI, otherwise uses `file-loader`
+      // Allow importing image/font files (also when included in CSS)
+      // Inline assets under 5kb as Base64 data URI, otherwise use `file-loader`
       {
         test: /\.(jpe?g|png|gif|svg|eot|woff2?|ttf|otf)(\?.*)?$/i,
-        use: 'url-loader?limit=5120&name=' + assetsPathPattern
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 5120,
+            name: assetsPathPattern
+          }
+        }
       }
     ]
   },
@@ -122,20 +137,19 @@ const config = {
     contentBase: appPath,
     noInfo: true,
     inline: true,
-    historyApiFallback: {
-      index: '/'
-    }
+    compress: true,
+    historyApiFallback: true
   }
 };
 
 if (appEnv === 'development') {
-  config.devtool = '#inline-source-map';
+  config.devtool = 'inline-source-map';
 }
 
 if (appEnv === 'production') {
   config.plugins.push(
     // Remove build folder
-    new CleanPlugin(['dist'])
+    new CleanWebpackPlugin(['dist'])
   );
 }
 

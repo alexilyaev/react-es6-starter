@@ -5,13 +5,17 @@ Features
 ----------
 
 - Webpack 2
-- React Hot Loader v3
-- React Router v4
-- Sass support
-- PostCSS plugins support. Settings at `postcss.config.js` (e.g. Autoprefixer).
-- Stylelint - Lints `scss` files on changes. Rules at `.stylelintrc`.
-- ESLint - Lints `js` files on changes. Rules at `.eslintrc`.
-- HTML5 History (non hash routes)
+  - Transpiling JS using babel
+  - Dynamic `index.html` generation
+  - Dynamic build file names for cache busting
+  - ESLint - Lints `js` files on changes. Rules at `.eslintrc`
+  - Stylelint - Lints `scss` files on changes. Rules at `.stylelintrc`
+  - Sass support
+  - PostCSS plugins support. Settings at `postcss.config.js` (e.g. Autoprefixer)
+  - HTML5 History API (non hash routes)
+- React
+  - React Hot Loader v3
+  - React Router v4
 
 Getting Started
 ----------------
