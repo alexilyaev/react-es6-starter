@@ -5,17 +5,18 @@ Features
 ----------
 
 - Webpack 2
-  - Transpiling JS using babel
+  - Transpiles `.js` files using Babel (settings in `.babelrc`)
+  - Transpiles `.scss` files using node-sass
+  - ESLint - Lints `js` files on changes (rules in `.eslintrc`)
+  - Stylelint - Lints `scss` files on changes (rules in `.stylelintrc`)
+  - PostCSS plugins (settings in `postcss.config.js`)
+    - Autoprefixer (supported browsers list in `browserslist` file)
   - Dynamic `index.html` generation
-  - Dynamic build file names for cache busting
-  - ESLint - Lints `js` files on changes. Rules at `.eslintrc`
-  - Stylelint - Lints `scss` files on changes. Rules at `.stylelintrc`
-  - Sass support
-  - PostCSS plugins support. Settings at `postcss.config.js` (e.g. Autoprefixer)
-  - HTML5 History API (non hash routes)
+  - Dynamic build file names with hash for cache busting
 - React
   - React Hot Loader v3
   - React Router v4
+    - HTML5 History API (non hash routes)
 
 Getting Started
 ----------------
