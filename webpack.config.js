@@ -81,7 +81,10 @@ const config = {
       {
         test: /\.js$/,
         use: [
-          'babel-loader?cacheDirectory=true'
+          {
+            loader: 'babel-loader',
+            options: { cacheDirectory: true }
+          },
         ],
         exclude
       },
