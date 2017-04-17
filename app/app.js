@@ -19,3 +19,8 @@ render(
   </BrowserRouter>,
   document.querySelector('#app')
 );
+
+// Enables hot-reload without page refresh. Removed during `build`
+if (module.hot) {
+  module.hot.accept();
+}

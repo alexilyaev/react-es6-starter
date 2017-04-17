@@ -40,6 +40,8 @@ const config = {
   },
 
   plugins: [
+    new webpack.NamedModulesPlugin(),
+
     // Generate index.html with included script tags
     new HtmlWebpackPlugin({
       inject: 'body',
