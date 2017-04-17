@@ -1,5 +1,9 @@
 @import 'assets/styles/colors';
 
-body {
-  background-color: $lightBlue;
+.root {
+  .root-heading {
+    color: #FAFAFA;
+    font-size: 4rem;
+    text-shadow: 1px 1px 4px #222;
+  }
 }

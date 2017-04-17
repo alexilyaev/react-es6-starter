@@ -1,4 +1,8 @@
+import 'cssrecipes-defaults/lib/document-remove-margin-padding.css';
+import 'cssrecipes-defaults/lib/box-sizing.css';
+import 'cssrecipes-defaults/lib/hidden.css';
 import 'normalize.css/normalize.css';
+
 import './assets/styles/main.scss';
 
 import React from 'react';
@@ -13,5 +17,5 @@ render(
       <Route exact path="/" component={ Root } />
     </Switch>
   </BrowserRouter>,
-  document.querySelector('#root')
+  document.querySelector('#app')
 );
