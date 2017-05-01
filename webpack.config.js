@@ -18,7 +18,6 @@ const distPathPattern   = '[name].[hash].js';
 const exclude           = /node_modules/;
 
 const config = {
-
   // The base directory for resolving `entry` (must be absolute path)
   context: appPath,
 
@@ -40,6 +39,7 @@ const config = {
   },
 
   plugins: [
+    // Better module names in console and needed for Hot Module Reloading
     new webpack.NamedModulesPlugin(),
 
     // Generate index.html with included script tags
@@ -79,7 +79,7 @@ const config = {
         exclude
       },
 
-      // Transpile JS code
+      // Allow importing JS files, transpile using Babel
       {
         test: /\.js$/,
         use: [
@@ -91,7 +91,7 @@ const config = {
         exclude
       },
 
-      // Allow importing SCSS files
+      // Allow importing SCSS files, transpile using node-sass and PostCSS
       {
         test: /\.scss$/,
         use: [
@@ -109,7 +109,7 @@ const config = {
         exclude: exclude
       },
 
-      // Allow importing CSS files
+      // Allow importing CSS files, also from node_modules
       {
         test: /\.css$/,
         use: [
@@ -122,7 +122,7 @@ const config = {
       },
 
       // Allow importing image/font files (also when included in CSS)
-      // Inline assets under 5kb as Base64 data URI, otherwise use `file-loader`
+      // Inline assets under 5kb as Base64 data URI, otherwise uses `file-loader`
       {
         test: /\.(jpe?g|png|gif|svg|eot|woff2?|ttf|otf)(\?.*)?$/i,
         use: {
