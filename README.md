@@ -22,11 +22,11 @@ Getting Started
 ----------------
 
 1. Install Node.js (choose Current)
-  - From [nodejs.org](https://nodejs.org/) (All platforms)
-  - Or using [Homebrew](http://blog.teamtreehouse.com/install-node-js-npm-mac) (Mac)
-  - Or any other [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+    - From [nodejs.org](https://nodejs.org/) (All platforms)
+    - Or using [Homebrew](http://blog.teamtreehouse.com/install-node-js-npm-mac) (Mac)
+    - Or any other [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 1. `git clone` or [Download](https://github.com/alexilyaev/react-es6-starter/archive/master.zip) this repo
-  - If using clone, remove the `.git` folder and [init a new Git repo](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+    - If using clone, remove the `.git` folder and [init a new Git repo](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
 1. Install dependencies (at the root of the repo):
 
     ```
