@@ -3,7 +3,8 @@
 
   "plugins": [
     "react",
-    "babel"
+    "babel",
+    "compat"
   ],
 
   "extends": ["eslint:recommended", "plugin:react/recommended"],
@@ -146,6 +147,9 @@
       "declaration": false,
       "assignment": false,
       "return": true
-    }]
+    }],
+
+    // eslint-plugin-compat
+    "compat/compat": 1
   }
 }
