@@ -1,8 +1,6 @@
 React ES6 Starter
 ==================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/alexilyaev/react-es6-starter.svg)](https://greenkeeper.io/)
-
 Features
 ----------
 
