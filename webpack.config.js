@@ -14,7 +14,7 @@ const appEnv            = process.env.NODE_ENV || 'development';
 const appPath           = path.join(__dirname, 'app');
 const distPath          = path.join(__dirname, 'dist');
 const assetsPathPattern = '[path][name].[hash].[ext]';
-const distPathPattern   = '[name].[hash].js';
+const distPathPattern   = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
 const exclude           = /node_modules/;
 
 const config = {
