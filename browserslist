@@ -1,0 +1,8 @@
+# Browsers that we support
+# https://github.com/ai/browserslist
+
+> 1%
+last 2 versions
+Firefox ESR
+not ie < 11
+not ie_mob < 11
