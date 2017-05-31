@@ -42,6 +42,9 @@ const config = {
     // Better module names in console and needed for Hot Module Reloading
     new webpack.NamedModulesPlugin(),
 
+    // Better chunk names, needed for long term caching
+    new webpack.NamedChunksPlugin(),
+
     // Generate index.html with included script tags
     new HtmlWebpackPlugin({
       inject: 'body',
