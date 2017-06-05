@@ -1,6 +1,9 @@
 React ES6 Starter
 ==================
 
+[![Dependency Status](https://david-dm.org/alexilyaev/react-es6-starter.svg)](https://david-dm.org/alexilyaev/react-es6-starter)
+[![Dependency Status](https://david-dm.org/alexilyaev/react-es6-starter/dev-status.svg)](https://david-dm.org/alexilyaev/react-es6-starter#info=devDependencies)
+
 Features
 ----------
 
