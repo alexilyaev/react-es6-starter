@@ -9,7 +9,8 @@
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
     "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
     "lint": "npm run lintjs && npm run lintcss",
-    "eslint-find-unused-rules": "eslint-find-rules -u .eslintrc -n"
+    "eslint-find-unused-rules": "eslint-find-rules -u .eslintrc -n",
+    "stylelint-find-unused-rules": "stylelint-find-rules"
   },
   "license": "MIT",
   "dependencies": {
@@ -48,6 +49,7 @@
     "sass-loader": "6.0.5",
     "style-loader": "0.18.1",
     "stylelint": "7.10.1",
+    "stylelint-find-rules": "0.4.0",
     "stylelint-webpack-plugin": "0.7.0",
     "url-loader": "0.5.8",
     "webpack": "2.6.0",
