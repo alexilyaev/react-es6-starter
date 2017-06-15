@@ -1,9 +1,11 @@
-@import 'assets/styles/colors';
+@import '../../assets/styles/colors';
 
 .root {
+  padding: 40px;
+
   .root-heading {
-    color: #FAFAFA;
+    color: $colorMainHeading;
     font-size: 4rem;
-    text-shadow: 1px 1px 4px #222;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   }
 }

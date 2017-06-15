@@ -99,9 +99,11 @@
     "react/jsx-max-props-per-line": 0,
     "react/jsx-no-comment-textnodes": 0,
     "react/jsx-no-literals": 0,
+    "react/no-unescaped-entities": 0,
     "react/jsx-sort-props": 0,
 
     // Warning
+    "react/default-props-match-prop-types": 1,
     "react/forbid-component-props": [1, { "forbid": ["className", "style"] }],
     "react/forbid-foreign-prop-types": 1,
     "react/no-children-prop": 1,
@@ -111,7 +113,6 @@
     "react/no-will-update-set-state": 1,
     "react/no-multi-comp": [1, { "ignoreStateless": true }],
     "react/no-string-refs": 1,
-    "react/no-unescaped-entities": 1,
     "react/no-unused-prop-types": 1,
     "react/prefer-es6-class": [1, "always"],
     "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
