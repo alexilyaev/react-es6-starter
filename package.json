@@ -1,6 +1,6 @@
 {
   "name": "react-es6-starter",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "description": "A boilerplate for React projects with Webpack and ES6",
   "scripts": {
     "start": "webpack-dev-server --hot",
