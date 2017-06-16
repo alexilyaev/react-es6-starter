@@ -112,6 +112,7 @@
     "react/no-did-update-set-state": 1,
     "react/no-will-update-set-state": 1,
     "react/no-multi-comp": [1, { "ignoreStateless": true }],
+    "react/no-redundant-should-component-update": 1,
     "react/no-string-refs": 1,
     "react/no-unused-prop-types": 1,
     "react/prefer-es6-class": [1, "always"],
@@ -133,6 +134,7 @@
 
     "react/jsx-boolean-value": [1, "never"],
     "react/jsx-closing-bracket-location": [1, "line-aligned"],
+    "react/jsx-closing-tag-location": 1,
     "react/jsx-equals-spacing": [1, "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-indent": [1, 2],
