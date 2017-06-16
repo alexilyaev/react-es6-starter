@@ -17,6 +17,7 @@ const distPath          = path.join(__dirname, 'dist');
 const assetsPathPattern = '[path][name].[hash].[ext]';
 const distPathPattern   = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
 const exclude           = /node_modules/;
+const publicPath        = '/'
 
 const config = {
   // The base directory for resolving `entry` (must be absolute path)
@@ -33,7 +34,7 @@ const config = {
     // The bundling output directory (must be absolute path)
     path: distPath,
     // Set proper base URL for serving resources
-    publicPath: '/',
+    publicPath: publicPath,
     // The output filename of the entry chunk, relative to `path`
     // [name] - Will be set per each key name in `entry`
     filename: distPathPattern
@@ -113,7 +114,7 @@ const config = {
             options: { includePaths: [appPath] }
           }
         ],
-        exclude: exclude
+        exclude
       },
 
       // Allow importing CSS files, also from node_modules
@@ -144,13 +145,19 @@ const config = {
   },
 
   // Settings for webpack-dev-server
-  // `--hot` must be set using CLI, adds HotModuleReplacementPlugin automatically
+  // https://webpack.js.org/configuration/dev-server/
+  // `--hot` must be set using CLI, will set `hot` and add HotModuleReplacementPlugin automatically
   devServer: {
-    contentBase: appPath,
-    noInfo: true,
-    inline: true,
+    clientLogLevel: 'warning',
     compress: true,
-    historyApiFallback: true
+    contentBase: appPath,
+    historyApiFallback: true,
+    noInfo: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    publicPath: publicPath
   }
 };
 
