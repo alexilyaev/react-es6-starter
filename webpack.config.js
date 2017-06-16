@@ -8,6 +8,7 @@ const path    = require('path');
 const HtmlWebpackPlugin  = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const StyleLintPlugin    = require('stylelint-webpack-plugin');
+const ProgressPlugin     = require('webpack/lib/ProgressPlugin');
 
 // Settings
 const appEnv            = process.env.NODE_ENV || 'development';
@@ -39,6 +40,9 @@ const config = {
   },
 
   plugins: [
+    // Show progress in command line, needed because adding `devServer.progress` doesn't work
+    new ProgressPlugin({ profile: false }),
+
     // Better module names in console and needed for Hot Module Reloading
     new webpack.NamedModulesPlugin(),
 
@@ -89,7 +93,7 @@ const config = {
           {
             loader: 'babel-loader',
             options: { cacheDirectory: true }
-          },
+          }
         ],
         exclude
       },
@@ -140,7 +144,7 @@ const config = {
   },
 
   // Settings for webpack-dev-server
-  // `--hot` and `--progress` must be set using CLI
+  // `--hot` must be set using CLI, adds HotModuleReplacementPlugin automatically
   devServer: {
     contentBase: appPath,
     noInfo: true,

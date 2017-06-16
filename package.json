@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "description": "A boilerplate for React projects with Webpack and ES6",
   "scripts": {
-    "start": "webpack-dev-server --hot --progress",
+    "start": "webpack-dev-server --hot",
     "prebuild": "npm prune&npm install",
-    "build": "cross-env NODE_ENV=production webpack -p --progress",
+    "build": "cross-env NODE_ENV=production webpack -p",
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
     "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
     "lint": "npm run lintjs && npm run lintcss",
