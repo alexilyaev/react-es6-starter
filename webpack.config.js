@@ -17,7 +17,7 @@ const distPath          = path.join(__dirname, 'dist');
 const assetsPathPattern = '[path][name].[hash].[ext]';
 const distPathPattern   = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
 const exclude           = /node_modules/;
-const publicPath        = '/'
+const publicPath        = '/';
 
 const config = {
   // The base directory for resolving `entry` (must be absolute path)
