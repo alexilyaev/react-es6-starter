@@ -1,6 +1,7 @@
 React ES6 Starter
 ==================
 
+[![Build Status](http://circleci-badges-max.herokuapp.com/img/alexilyaev/react-es6-starter?token=e51a95d02f9b923f13cb91e1ba62d9250bc3b961)](https://circleci.com/gh/alexilyaev/react-es6-starter)
 [![Dependency Status](https://david-dm.org/alexilyaev/react-es6-starter.svg)](https://david-dm.org/alexilyaev/react-es6-starter)
 [![Dependency Status](https://david-dm.org/alexilyaev/react-es6-starter/dev-status.svg)](https://david-dm.org/alexilyaev/react-es6-starter#info=devDependencies)
 
