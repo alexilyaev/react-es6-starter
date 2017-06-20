@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/www/Node/Personal/react-es6-starter
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:6.10.3
     steps:
       - checkout
       - run:
