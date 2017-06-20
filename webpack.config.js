@@ -50,6 +50,8 @@ const config = {
     // Better chunk names, needed for long term caching
     new webpack.NamedChunksPlugin(),
 
+    new webpack.optimize.ModuleConcatenationPlugin(),
+
     // Generate index.html with included script tags
     new HtmlWebpackPlugin({
       inject: 'body',
