@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: circleci/node:6.10.3
     steps:
-      - echo "I am alive from circle.yml" && exit 0
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
