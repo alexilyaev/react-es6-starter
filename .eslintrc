@@ -11,7 +11,6 @@
   "env": {
     "es6": true,
     "browser": true,
-    "jasmine": true,
     "commonjs": true,
     "node": true
   },
@@ -160,5 +159,15 @@
 
     // eslint-plugin-compat
     "compat/compat": 1
-  }
+  },
+
+  // Override config (only applied to files that match the given globs)
+  "overrides": [
+    {
+      "files": ["app/**/*.spec.js"],
+      "env": {
+        "mocha": true
+      }
+    }
+  ]
 }
