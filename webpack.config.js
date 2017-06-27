@@ -5,10 +5,11 @@ const webpack = require('webpack');
 const path    = require('path');
 
 // Load Webpack Plugins
-const HtmlWebpackPlugin  = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const StyleLintPlugin    = require('stylelint-webpack-plugin');
-const ProgressPlugin     = require('webpack/lib/ProgressPlugin');
+const HtmlWebpackPlugin           = require('html-webpack-plugin');
+const CleanWebpackPlugin          = require('clean-webpack-plugin');
+const StyleLintPlugin             = require('stylelint-webpack-plugin');
+const ProgressPlugin              = require('webpack/lib/ProgressPlugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 // Settings
 const appEnv            = process.env.NODE_ENV || 'development';
@@ -41,6 +42,14 @@ const config = {
   },
 
   plugins: [
+    // Nicer errors/warning in CLI
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+        messages: ['Project running at: http://localhost:8080/']
+      },
+      clearConsole: true
+    }),
+
     // Show progress in command line, needed because adding `devServer.progress` doesn't work
     new ProgressPlugin({ profile: false }),
 
