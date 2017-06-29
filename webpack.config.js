@@ -42,14 +42,6 @@ const config = {
   },
 
   plugins: [
-    // Nicer errors/warning in CLI
-    new FriendlyErrorsWebpackPlugin({
-      compilationSuccessInfo: {
-        messages: ['Project running at: http://localhost:8080/']
-      },
-      clearConsole: true
-    }),
-
     // Show progress in command line, needed because adding `devServer.progress` doesn't work
     new ProgressPlugin({ profile: false }),
 
@@ -172,6 +164,16 @@ const config = {
 
 if (appEnv === 'development') {
   config.devtool = 'inline-source-map';
+
+  config.plugins.push(
+    // Nicer errors/warning in CLI
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+        messages: [`You're good to go!`]
+      },
+      clearConsole: true
+    })
+  );
 }
 
 if (appEnv === 'production') {
