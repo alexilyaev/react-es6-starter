@@ -9,10 +9,7 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
 
   "env": {
-    "es6": true,
-    "browser": true,
-    "commonjs": true,
-    "node": true
+    "es6": true
   },
 
   "parser": "babel-eslint",
@@ -21,7 +18,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "sourceType": "module"
+    "sourceType": "script"
   },
 
   "rules": {
@@ -57,7 +54,6 @@
     "no-multiple-empty-lines": [1, { "max": 1 }],
     "no-useless-constructor": 1,
 
-    "strict": [1, "never"],
     "indent": [1, 2, { "SwitchCase": 1 }],
     "quotes": [1, "single", { "allowTemplateLiterals": true }],
     "linebreak-style": [1, "unix"],
@@ -163,6 +159,36 @@
 
   // Override config (only applied to files that match the given globs)
   "overrides": [
+    // All JS except inside `app`
+    {
+      "files": ["!app/**/*.js"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "strict": [1, "global"]
+      }
+    },
+
+    // JS files inside `app`
+    {
+      "files": ["app/**/*.js"],
+      "env": {
+        "browser": true
+      },
+      "globals": {
+        "process": true,
+        "module": true
+      },
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "strict": [1, "never"]
+      }
+    },
+
+    // Test files inside `app`
     {
       "files": ["app/**/*.spec.js"],
       "env": {
