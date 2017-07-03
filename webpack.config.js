@@ -2,23 +2,23 @@
 'use strict';
 
 const webpack = require('webpack');
-const path    = require('path');
+const path = require('path');
 
 // Load Webpack Plugins
-const HtmlWebpackPlugin           = require('html-webpack-plugin');
-const CleanWebpackPlugin          = require('clean-webpack-plugin');
-const StyleLintPlugin             = require('stylelint-webpack-plugin');
-const ProgressPlugin              = require('webpack/lib/ProgressPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 // Settings
-const appEnv            = process.env.NODE_ENV || 'development';
-const appPath           = path.join(__dirname, 'app');
-const distPath          = path.join(__dirname, 'dist');
+const appEnv = process.env.NODE_ENV || 'development';
+const appPath = path.join(__dirname, 'app');
+const distPath = path.join(__dirname, 'dist');
 const assetsPathPattern = '[path][name].[hash].[ext]';
-const distPathPattern   = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
-const exclude           = /node_modules/;
-const publicPath        = '/';
+const distPathPattern = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
+const exclude = /node_modules/;
+const publicPath = '/';
 
 const config = {
   // The base directory for resolving `entry` (must be absolute path)
@@ -82,9 +82,7 @@ const config = {
       {
         enforce: 'pre',
         test: /\.js$/,
-        use: [
-          'eslint-loader'
-        ],
+        use: ['eslint-loader'],
         exclude
       },
 
@@ -158,7 +156,9 @@ const config = {
       warnings: false,
       errors: true
     },
-    publicPath: publicPath
+    port: 8080,
+    publicPath: publicPath,
+    quiet: true
   }
 };
 
