@@ -72,7 +72,10 @@ const config = {
       'process.env': {
         NODE_ENV: JSON.stringify(appEnv)
       }
-    })
+    }),
+
+    // Experimental: Webpack Scope Hoisting
+    new webpack.optimize.ModuleConcatenationPlugin()
   ],
 
   module: {

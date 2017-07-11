@@ -9,7 +9,7 @@ React ES6 Starter
 Features
 ----------
 
-- Webpack 2
+- Webpack 3
   - Transpiles `.js` files using Babel (settings in `.babelrc`)
   - Transpiles `.scss` files using node-sass
   - ESLint - Lints `js` files on changes (rules in `.eslintrc`)
