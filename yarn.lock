@@ -5063,9 +5063,9 @@ stylehacks@^2.3.2:
     text-table "^0.2.0"
     write-file-stdout "0.0.2"
 
-stylelint-find-rules@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/stylelint-find-rules/-/stylelint-find-rules-0.5.1.tgz#37ff7f208319935c0ec099ff9cdad4404f1181d9"
+stylelint-find-rules@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/stylelint-find-rules/-/stylelint-find-rules-0.5.3.tgz#1c2d90f0dafab58321fc65cb575827ce5507352f"
   dependencies:
     columnify "1.5.4"
     cosmiconfig "2.1.3"
