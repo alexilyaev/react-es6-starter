@@ -84,6 +84,7 @@
     "react/no-array-index-key": 0,
     "react/no-danger": 0,
     "react/no-set-state": 0,
+    "react/no-unused-state": 0,
     "react/prop-types": 0,
     "react/require-default-props": 0,
     "react/sort-prop-types": 0,
@@ -102,6 +103,7 @@
     "react/jsx-sort-props": 0,
 
     // Warning
+    "react/boolean-prop-naming": 1,
     "react/default-props-match-prop-types": 1,
     "react/forbid-component-props": [1, { "forbid": ["className", "style"] }],
     "react/forbid-foreign-prop-types": 1,
@@ -113,6 +115,7 @@
     "react/no-multi-comp": [1, { "ignoreStateless": true }],
     "react/no-redundant-should-component-update": 1,
     "react/no-string-refs": 1,
+    "react/no-typos": 1,
     "react/no-unused-prop-types": 1,
     "react/prefer-es6-class": [1, "always"],
     "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
