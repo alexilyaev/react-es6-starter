@@ -18,6 +18,7 @@ const assetsPathPattern = '[path][name].[hash].[ext]';
 const distPathPattern = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
 const exclude = /node_modules/;
 const publicPath = '/';
+const PORT = process.env.PORT || 8080;
 
 const config = {
   // The base directory for resolving `entry` (must be absolute path)
@@ -158,7 +159,7 @@ const config = {
       warnings: false,
       errors: true
     },
-    port: 8080,
+    port: PORT,
     publicPath: publicPath,
     quiet: true
   }
@@ -171,7 +172,7 @@ if (appEnv === 'development') {
     // Nicer errors/warning in CLI
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: [`You're good to go!`]
+        messages: [`You're good to go:`, `http://localhost:${PORT}`]
       },
       clearConsole: true
     })

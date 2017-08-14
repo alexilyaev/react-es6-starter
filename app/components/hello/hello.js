@@ -28,7 +28,7 @@ export default class Hello extends React.Component {
     return (
       <div className="hello">
         <h2 className="hello-message">
-          { this.props.message }
+          {this.props.message}
         </h2>
 
         <p>
@@ -36,7 +36,7 @@ export default class Hello extends React.Component {
         </p>
 
         <footer>
-          { this.state.now }
+          {this.state.now}
         </footer>
       </div>
     );

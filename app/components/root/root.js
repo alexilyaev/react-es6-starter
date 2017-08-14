@@ -16,7 +16,7 @@ export default class Root extends React.Component {
   render() {
     return (
       <div className="root">
-        { this.renderHeading() }
+        {this.renderHeading()}
         <Hello message="Welcome to React." />
       </div>
     );

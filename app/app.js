@@ -8,17 +8,24 @@ import './assets/styles/main.scss';
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { AppContainer } from 'react-hot-loader';
 
 import Root from './components/root/root';
 
-render(
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={ Root } />
-    </Switch>
-  </BrowserRouter>,
-  document.querySelector('#app')
-);
+function renderClient(RootComponent) {
+  render(
+    <AppContainer>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={RootComponent} />
+        </Switch>
+      </BrowserRouter>
+    </AppContainer>,
+    document.querySelector('#app')
+  );
+}
+
+renderClient(Root);
 
 // Enables hot-reload without page refresh. Removed during `build`
 if (module.hot) {
