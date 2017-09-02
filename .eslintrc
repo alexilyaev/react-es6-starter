@@ -76,6 +76,8 @@
     "eqeqeq": [1, "always"],
     "no-return-assign": 1,
     "no-multi-str": 1,
+    "func-call-spacing": [1, "never"],
+    "function-paren-newline": [1, "multiline"],
 
     // React
 
