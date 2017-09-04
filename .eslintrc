@@ -29,9 +29,13 @@
     "no-undef": 1,
     "no-unreachable": 1,
     "no-unused-vars": [1, { "vars": "all", "args": "after-used" }],
-    "newline-after-var": [1, "always"],
     "operator-linebreak": [1, "after", { "overrides": { "?": "before", ":": "before" } }],
-    "newline-before-return": 1,
+    "padding-line-between-statements": [
+      1,
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let"], "next": "*"},
+      { "blankLine": "any",    "prev": ["const", "let"], "next": ["const", "let"]}
+    ],
     "prefer-arrow-callback": 1,
     "prefer-const": 1,
     "no-mixed-spaces-and-tabs": 1,
