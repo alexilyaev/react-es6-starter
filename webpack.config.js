@@ -166,24 +166,23 @@ const config = {
 };
 
 if (appEnv === 'development') {
-  config.devtool = 'inline-source-map';
+  // Nicer errors/warning in CLI
+  const friendlyErrorsPlugin = new FriendlyErrorsWebpackPlugin({
+    compilationSuccessInfo: {
+      messages: [`You're good to go:`, `http://localhost:${PORT}`]
+    },
+    clearConsole: true
+  });
 
-  config.plugins.push(
-    // Nicer errors/warning in CLI
-    new FriendlyErrorsWebpackPlugin({
-      compilationSuccessInfo: {
-        messages: [`You're good to go:`, `http://localhost:${PORT}`]
-      },
-      clearConsole: true
-    })
-  );
+  config.plugins.push(friendlyErrorsPlugin);
+  config.devtool = 'inline-source-map';
 }
 
 if (appEnv === 'production') {
-  config.plugins.push(
-    // Remove build folder
-    new CleanWebpackPlugin(['dist'])
-  );
+  // Remove build folder
+  const cleanPlugin = new CleanWebpackPlugin(['dist']);
+
+  config.plugins.push(cleanPlugin);
 }
 
 module.exports = config;
