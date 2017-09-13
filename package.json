@@ -4,7 +4,7 @@
   "description": "A boilerplate for React projects with Webpack and ES6",
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack -p --display-optimization-bailout",
+    "build": "cross-env NODE_ENV=production webpack -p",
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
     "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
     "lint": "npm run lintjs && npm run lintcss",

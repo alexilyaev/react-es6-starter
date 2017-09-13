@@ -60,7 +60,8 @@ const config = {
 
     // Lint style files
     new StyleLintPlugin({
-      syntax: 'scss'
+      syntax: 'scss',
+      emitErrors: false
     }),
 
     // Do not output to dist if there are errors
@@ -76,7 +77,8 @@ const config = {
     }),
 
     // Experimental: Webpack Scope Hoisting
-    new webpack.optimize.ModuleConcatenationPlugin()
+    // Should add `--display-optimization-bailout` to the `build` script in `package.json`
+    // new webpack.optimize.ModuleConcatenationPlugin()
   ],
 
   module: {
