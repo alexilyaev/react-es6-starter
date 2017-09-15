@@ -193,7 +193,8 @@ const config = {
       errors: true
     },
     port: PORT,
-    publicPath: publicPath
+    publicPath: publicPath,
+    quiet: true
   },
 
   // Map transpiled code to original source code for debugging, loaded only if DevTools is opened
