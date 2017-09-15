@@ -56,12 +56,11 @@ Build the project for deployment
 npm run build
 ```
 
-- Must use a server that redirects missing routes back to `index.html`
+- Must use a server that serves missing routes as `index.html`
 
 ### To run the build locally
 
 ```
 npm i -g live-server
-cd dist/
-live-server --entry-file=index.html
+live-server --mount=/:dist --entry-file=dist/index.html
 ```

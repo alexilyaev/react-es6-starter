@@ -12,23 +12,23 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 // Settings
 const appEnv = process.env.NODE_ENV || 'development';
+const isProduction = appEnv === 'production';
+const isDevelopment = appEnv === 'development';
 const appPath = path.join(__dirname, 'app');
 const distPath = path.join(__dirname, 'dist');
 const assetsPathPattern = '[path][name].[hash].[ext]';
-const distPathPattern = appEnv === 'production' ? '[name].[chunkhash].js' : '[name].js';
+const distPathPattern = isProduction ? '[name].[chunkhash].js' : '[name].js';
 const exclude = /node_modules/;
 const publicPath = '/';
 const PORT = process.env.PORT || 8080;
+const noop = () => {};
 
 const config = {
   // The base directory for resolving `entry` (must be absolute path)
   context: appPath,
 
   entry: {
-    app: [
-      'react-hot-loader/patch',
-      './app.js'
-    ]
+    app: ['react-hot-loader/patch', './app.js']
   },
 
   output: {
@@ -78,7 +78,20 @@ const config = {
 
     // Experimental: Webpack Scope Hoisting
     // Should add `--display-optimization-bailout` to the `build` script in `package.json`
-    // new webpack.optimize.ModuleConcatenationPlugin()
+    // new webpack.optimize.ModuleConcatenationPlugin(),
+
+    // Nicer errors/warning in CLI
+    isDevelopment
+      ? new FriendlyErrorsWebpackPlugin({
+        compilationSuccessInfo: {
+          messages: [`You're good to go:`, `http://localhost:${PORT}`]
+        },
+        clearConsole: true
+      })
+      : noop,
+
+    // Remove build folder
+    isProduction ? new CleanWebpackPlugin(['dist']) : noop
   ],
 
   module: {
@@ -107,15 +120,27 @@ const config = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: { sourceMap: isDevelopment }
+          },
           {
             loader: 'css-loader',
-            options: { root: appPath }
+            options: {
+              root: appPath,
+              sourceMap: isDevelopment
+            }
           },
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: { sourceMap: isDevelopment }
+          },
           {
             loader: 'sass-loader',
-            options: { includePaths: [appPath] }
+            options: {
+              includePaths: [appPath],
+              sourceMap: isDevelopment
+            }
           }
         ],
         exclude
@@ -125,10 +150,16 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: { sourceMap: isDevelopment }
+          },
           {
             loader: 'css-loader',
-            options: { root: appPath }
+            options: {
+              root: appPath,
+              sourceMap: isDevelopment
+            }
           }
         ]
       },
@@ -162,29 +193,13 @@ const config = {
       errors: true
     },
     port: PORT,
-    publicPath: publicPath,
-    quiet: true
-  }
+    publicPath: publicPath
+  },
+
+  // Map transpiled code to original source code for debugging, loaded only if DevTools is opened
+  // https://webpack.js.org/guides/development/#using-source-maps
+  // https://webpack.js.org/configuration/devtool/
+  devtool: isProduction ? 'source-map' : 'inline-source-map'
 };
-
-if (appEnv === 'development') {
-  // Nicer errors/warning in CLI
-  const friendlyErrorsPlugin = new FriendlyErrorsWebpackPlugin({
-    compilationSuccessInfo: {
-      messages: [`You're good to go:`, `http://localhost:${PORT}`]
-    },
-    clearConsole: true
-  });
-
-  config.plugins.push(friendlyErrorsPlugin);
-  config.devtool = 'inline-source-map';
-}
-
-if (appEnv === 'production') {
-  // Remove build folder
-  const cleanPlugin = new CleanWebpackPlugin(['dist']);
-
-  config.plugins.push(cleanPlugin);
-}
 
 module.exports = config;
