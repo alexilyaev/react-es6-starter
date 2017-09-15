@@ -52,5 +52,16 @@
     "url-loader": "0.5.9",
     "webpack": "3.5.5",
     "webpack-dev-server": "2.7.1"
-  }
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-router",
+    "hot",
+    "reload",
+    "hmr",
+    "webpack",
+    "boilerplate",
+    "starter"
+  ]
 }
