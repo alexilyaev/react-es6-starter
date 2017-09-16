@@ -31,13 +31,7 @@ export default class Hello extends React.Component {
           {this.props.message}
         </h2>
 
-        <p>
-          Go ahead and play around, it's all good.
-        </p>
-
-        <footer>
-          {this.state.now}
-        </footer>
+        <p>Change my text in hello.js to test if HMR re-renders everything or just me.</p>
       </div>
     );
   }

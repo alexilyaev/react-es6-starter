@@ -6,6 +6,18 @@ React ES6 Starter
 [![Dependency Status](https://david-dm.org/alexilyaev/react-es6-starter.svg)](https://david-dm.org/alexilyaev/react-es6-starter)
 [![Dependency Status](https://david-dm.org/alexilyaev/react-es6-starter/dev-status.svg)](https://david-dm.org/alexilyaev/react-es6-starter#info=devDependencies)
 
+NOTE
+------
+
+This branch (**hmr-test**) was created to test this hot-module reload [issue](https://github.com/gaearon/react-hot-loader/issues/508)
+
+### Status
+
+After commenting out `new webpack.optimize.ModuleConcatenationPlugin(),` in `webpack.config.js`,  
+HMR now works as expected.
+
+---
+
 Features
 ----------
 
