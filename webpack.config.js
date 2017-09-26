@@ -21,7 +21,6 @@ const distPathPattern = isProduction ? '[name].[chunkhash].js' : '[name].js';
 const exclude = /node_modules/;
 const publicPath = '/';
 const PORT = process.env.PORT || 8080;
-const noop = () => {};
 
 const config = {
   // The base directory for resolving `entry` (must be absolute path)
@@ -74,24 +73,11 @@ const config = {
       'process.env': {
         NODE_ENV: JSON.stringify(appEnv)
       }
-    }),
+    })
 
     // Experimental: Webpack Scope Hoisting
     // Should add `--display-optimization-bailout` to the `build` script in `package.json`
-    // new webpack.optimize.ModuleConcatenationPlugin(),
-
-    // Nicer errors/warning in CLI
-    isDevelopment
-      ? new FriendlyErrorsWebpackPlugin({
-        compilationSuccessInfo: {
-          messages: [`You're good to go:`, `http://localhost:${PORT}`]
-        },
-        clearConsole: true
-      })
-      : noop,
-
-    // Remove build folder
-    isProduction ? new CleanWebpackPlugin(['dist']) : noop
+    // new webpack.optimize.ModuleConcatenationPlugin()
   ],
 
   module: {
@@ -202,5 +188,22 @@ const config = {
   // https://webpack.js.org/configuration/devtool/
   devtool: isProduction ? 'source-map' : 'inline-source-map'
 };
+
+if (isDevelopment) {
+  const options = {
+    compilationSuccessInfo: {
+      messages: [`You're good to go:`, `http://localhost:${PORT}`]
+    },
+    clearConsole: true
+  };
+
+  // Nicer errors/warning in CLI
+  config.plugins.push(new FriendlyErrorsWebpackPlugin(options));
+}
+
+if (isProduction) {
+  // Remove build folder
+  config.plugins.push(new CleanWebpackPlugin(['dist']));
+}
 
 module.exports = config;

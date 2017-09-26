@@ -27,17 +27,11 @@ export default class Hello extends React.Component {
   render() {
     return (
       <div className="hello">
-        <h2 className="hello-message">
-          {this.props.message}
-        </h2>
+        <h2 className="hello-message">{this.props.message}</h2>
 
-        <p>
-          Go ahead and play around, it's all good.
-        </p>
+        <p>Go ahead and play around, it's all good.</p>
 
-        <footer>
-          {this.state.now}
-        </footer>
+        <footer>{this.state.now}</footer>
       </div>
     );
   }
