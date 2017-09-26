@@ -10,7 +10,7 @@ import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import Root from './components/root/root';
+import Root from './components/Root/Root';
 
 // Disable RedBox for errors, can be removed when the issue is resolved
 // https://github.com/gaearon/react-hot-loader/issues/462

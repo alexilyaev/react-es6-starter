@@ -1,8 +1,8 @@
-import './root.scss';
+import './Root.scss';
 
 import React from 'react';
 
-import Hello from '../hello/hello';
+import Hello from '../Hello/Hello';
 
 export default class Root extends React.Component {
   renderHeading() {
