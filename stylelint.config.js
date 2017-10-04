@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+  defaultSeverity: 'warning',
   rules: {
     'at-rule-blacklist': null,
     'at-rule-empty-line-before': [

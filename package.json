@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack -p",
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
-    "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
+    "lintcss": "stylelint --syntax scss --max-warnings 0 'app/**/*.scss'",
     "lint": "npm run lintjs && npm run lintcss",
     "eslint-find-unused-rules": "eslint-find-rules -u .eslintrc -n",
     "stylelint-find-unused-rules": "stylelint-find-rules"
