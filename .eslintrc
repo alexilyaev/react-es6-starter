@@ -205,7 +205,7 @@
     {
       "files": ["app/**/*.spec.js"],
       "env": {
-        "mocha": true
+        "jest": true
       }
     }
   ]
