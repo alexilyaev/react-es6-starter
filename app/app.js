@@ -12,10 +12,6 @@ import { AppContainer } from 'react-hot-loader';
 
 import Root from './components/Root/Root';
 
-// Disable RedBox for errors, can be removed when the issue is resolved
-// https://github.com/gaearon/react-hot-loader/issues/462
-delete AppContainer.prototype.unstable_handleError;
-
 function renderClient(RootComponent) {
   render(
     <AppContainer>
