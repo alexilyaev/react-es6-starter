@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack -p",
     "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
-    "lintcss": "stylelint --syntax scss 'app/**/*.scss'",
+    "lintcss": "stylelint --syntax scss --ignore-path .gitignore \"app/**/*.scss\"",
     "lint": "npm run lintjs && npm run lintcss",
     "eslint-find-unused-rules": "eslint-find-rules -u .eslintrc -n",
     "stylelint-find-unused-rules": "stylelint-find-rules"
@@ -21,7 +21,7 @@
     "react-router-dom": "4.2.2"
   },
   "devDependencies": {
-    "autoprefixer": "7.1.5",
+    "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "8.0.1",
     "babel-loader": "7.1.2",
@@ -30,9 +30,9 @@
     "babel-preset-react": "6.24.1",
     "babel-runtime": "6.26.0",
     "clean-webpack-plugin": "0.1.17",
-    "cross-env": "5.1.0",
+    "cross-env": "5.1.1",
     "css-loader": "0.28.7",
-    "eslint": "4.9.0",
+    "eslint": "4.10.0",
     "eslint-config-react": "1.1.7",
     "eslint-find-rules": "3.1.1",
     "eslint-loader": "1.9.0",
@@ -52,7 +52,7 @@
     "stylelint-webpack-plugin": "0.9.0",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
-    "webpack-dev-server": "2.9.2"
+    "webpack-dev-server": "2.9.3"
   },
   "keywords": [
     "react",
