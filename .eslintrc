@@ -63,7 +63,7 @@
     "indent": [1, 2, { "SwitchCase": 1 }],
     "quotes": [1, "single", { "allowTemplateLiterals": true }],
     "linebreak-style": [1, "unix"],
-    "lines-between-class-members": [1, "always"],
+    "lines-between-class-members": [1, "always", {"exceptAfterSingleLine": true}],
     "line-comment-position": [1, "above"],
     "no-else-return": 1,
     "brace-style": [1, "1tbs", { "allowSingleLine": false }],
