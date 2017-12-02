@@ -1,4 +1,4 @@
-React ES6 Starter
+[React ES6 Starter](https://github.com/alexilyaev/react-es6-starter)
 ==================
 
 [![Build Status](http://circleci-badges-max.herokuapp.com/img/alexilyaev/react-es6-starter?token=e51a95d02f9b923f13cb91e1ba62d9250bc3b961)](https://circleci.com/gh/alexilyaev/react-es6-starter)
@@ -31,7 +31,8 @@ Getting Started
     - Or using [Homebrew](http://blog.teamtreehouse.com/install-node-js-npm-mac) (Mac)
     - Or any other [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 1. `git clone` or [Download](https://github.com/alexilyaev/react-es6-starter/archive/master.zip) this repo
-    - If using clone, remove the `.git` folder and [init a new Git repo](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+    - If using clone, remove the `.git` folder and [init a new Git repo](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) (name it something else)
+1. Update the README to your needs
 1. Install dependencies (at the root of the repo):
 
     ```
