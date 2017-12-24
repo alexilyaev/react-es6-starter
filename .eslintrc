@@ -84,6 +84,7 @@
     "no-multi-str": 1,
     "func-call-spacing": [1, "never"],
     "function-paren-newline": [1, "multiline"],
+    "array-callback-return": 1,
 
     // React
 
