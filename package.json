@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --max-warnings 0 .",
+    "lintjs": "eslint -c .eslintrc --ignore-path .gitignore --rule 'no-console: 1' --max-warnings 0 .",
     "lintcss": "stylelint --syntax scss --ignore-path .gitignore \"app/**/*.scss\"",
     "lint": "npm run lintjs && npm run lintcss",
     "eslint-find-unused-rules": "eslint-find-rules -u .eslintrc -n",
