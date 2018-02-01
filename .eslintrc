@@ -58,6 +58,21 @@
     "func-call-spacing": [1, "never"],
     "function-paren-newline": [1, "multiline"],
 
+    "react/jsx-closing-bracket-location": [1, "line-aligned"],
+    "react/jsx-closing-tag-location": 1,
+    "react/jsx-equals-spacing": [1, "never"],
+    "react/jsx-indent": [1, 2],
+    "react/jsx-tag-spacing": [1, {
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never"
+    }],
+    "react/jsx-wrap-multilines": [1, {
+      "declaration": false,
+      "assignment": false,
+      "return": true
+    }],
+
     // Warning
     "array-callback-return": 1,
     "curly": [1, "all"],
@@ -154,27 +169,13 @@
     "react/void-dom-elements-no-children": 1,
 
     "react/jsx-boolean-value": [1, "never"],
-    "react/jsx-closing-bracket-location": [1, "line-aligned"],
-    "react/jsx-closing-tag-location": 1,
-    "react/jsx-equals-spacing": [1, "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": [1, 2],
     "react/jsx-no-bind": [1, {
       "ignoreRefs": true,
       "allowArrowFunctions": true
     }],
     "react/jsx-no-target-blank": 1,
     "react/jsx-pascal-case": 1,
-    "react/jsx-tag-spacing": [1, {
-      "closingSlash": "never",
-      "beforeSelfClosing": "always",
-      "afterOpening": "never"
-    }],
-    "react/jsx-wrap-multilines": [1, {
-      "declaration": false,
-      "assignment": false,
-      "return": true
-    }],
 
     // eslint-plugin-compat
     "compat/compat": 1
