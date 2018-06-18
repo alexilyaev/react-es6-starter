@@ -1,11 +1,12 @@
 import './Root.scss';
 
 import React from 'react';
+import { hot } from 'react-hot-loader';
 
 import Hello from '../Hello/Hello';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
-export default class Root extends React.Component {
+class Root extends React.Component {
   renderHeading() {
     return <h1 className="root-heading">React ES6 Starter!</h1>;
   }
@@ -22,3 +23,5 @@ export default class Root extends React.Component {
     );
   }
 }
+
+export default hot(module)(Root);
