@@ -1,6 +1,5 @@
 'use strict';
 
-const webpack = require('webpack');
 const path = require('path');
 
 // Load Webpack Plugins
@@ -23,11 +22,15 @@ const publicPath = '/';
 const PORT = process.env.PORT || 8080;
 
 const config = {
+  // Set built-in optimizations
+  // https://webpack.js.org/concepts/mode/
+  mode: isProduction ? 'production' : 'development',
+
   // The base directory for resolving `entry` (must be absolute path)
   context: appPath,
 
   entry: {
-    app: ['react-hot-loader/patch', './app.js']
+    app: './app.js'
   },
 
   output: {
@@ -44,12 +47,6 @@ const config = {
     // Show progress in command line, needed because adding `devServer.progress` doesn't work
     new ProgressPlugin({ profile: false }),
 
-    // Better module names in console and needed for Hot Module Reloading
-    new webpack.NamedModulesPlugin(),
-
-    // Better chunk names, needed for long term caching
-    new webpack.NamedChunksPlugin(),
-
     // Generate index.html with included script tags
     new HtmlWebpackPlugin({
       inject: 'body',
@@ -61,23 +58,7 @@ const config = {
     new StyleLintPlugin({
       syntax: 'scss',
       emitErrors: false
-    }),
-
-    // Do not output to dist if there are errors
-    new webpack.NoEmitOnErrorsPlugin(),
-
-    // Define global variables that will be available in any chunk
-    new webpack.DefinePlugin({
-      // Make sure env variables are available on client and server code
-      // Used by React to cleanup debugging properties when using NODE_ENV === `production`
-      'process.env': {
-        NODE_ENV: JSON.stringify(appEnv)
-      }
     })
-
-    // Experimental: Webpack Scope Hoisting
-    // Should add `--display-optimization-bailout` to the `build` script in `package.json`
-    // new webpack.optimize.ModuleConcatenationPlugin()
   ],
 
   module: {
@@ -173,7 +154,6 @@ const config = {
     compress: true,
     contentBase: appPath,
     historyApiFallback: true,
-    noInfo: true,
     overlay: {
       warnings: false,
       errors: true
