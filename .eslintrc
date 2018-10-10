@@ -6,7 +6,10 @@
     "compat"
   ],
 
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
 
   "env": {
     "es6": true
@@ -22,24 +25,18 @@
   },
 
   "rules": {
-    // Warning
+    // Warning (disable if auto-formatting with Prettier)
+    "quotes": [1, "single", { "allowTemplateLiterals": true }],
     "max-len": [1, { "code": 100, "ignoreUrls": true }],
-    "no-console": 1,
-    "no-debugger": 1,
-    "no-undef": 1,
-    "no-unreachable": 1,
-    "no-unused-vars": [1, { "vars": "all", "args": "after-used" }],
-    "operator-linebreak": [1, "after", { "overrides": { "?": "before", ":": "before" } }],
-    "padding-line-between-statements": [
-      1,
-      { "blankLine": "always", "prev": "*", "next": "return" },
-      { "blankLine": "always", "prev": ["const", "let"], "next": "*"},
-      { "blankLine": "any",    "prev": ["const", "let"], "next": ["const", "let"]}
-    ],
-    "prefer-arrow-callback": 1,
-    "prefer-const": 1,
+    "arrow-parens": [1, "as-needed"],
+    "arrow-spacing": 1,
+    "brace-style": [1, "1tbs", { "allowSingleLine": false }],
+    "eol-last": 1,
+    "indent": [1, 2, { "SwitchCase": 1 }],
+    "key-spacing": [1, { "mode": "strict" }],
+    "keyword-spacing": 1,
+    "no-extra-semi": 1,
     "no-mixed-spaces-and-tabs": 1,
-    "no-multi-assign": 1,
     "no-multi-spaces": [1, {
       "exceptions": {
         "VariableDeclarator": true,
@@ -49,39 +46,70 @@
         "ClassProperty": true
       }
     }],
-    "key-spacing": [1, { "mode": "strict" }],
-    "no-warning-comments": [1, { "terms": ["fixme", "todo", "hack", "review", "xxx"] }],
-    "eol-last": 1,
-    "no-trailing-spaces": 1,
-    "semi": [1, "always"],
-    "semi-style": [1, "last"],
-    "semi-spacing": [1, {"before": false, "after": true}],
-    "no-extra-semi": 1,
     "no-multiple-empty-lines": [1, { "max": 1 }],
-    "no-useless-constructor": 1,
-
-    "indent": [1, 2, { "SwitchCase": 1 }],
-    "quotes": [1, "single", { "allowTemplateLiterals": true }],
-    "linebreak-style": [1, "unix"],
-    "no-else-return": 1,
-    "brace-style": [1, "1tbs", { "allowSingleLine": false }],
-    "curly": [1, "all"],
+    "no-trailing-spaces": 1,
     "object-curly-spacing": [1, "always"],
-    "arrow-parens": [1, "as-needed"],
+    "operator-linebreak": [1, "after", { "overrides": { "?": "before", ":": "before" } }],
+    "semi": [1, "always"],
+    "semi-spacing": [1, {"before": false, "after": true}],
+    "semi-style": [1, "last"],
     "space-before-blocks": [1, "always"],
-    "arrow-spacing": 1,
-    "keyword-spacing": 1,
-    "no-inline-comments": 1,
-    "spaced-comment": [1, "always", { "exceptions": ["-"] }],
     "switch-colon-spacing": [1, {"before": false, "after": true}],
-    "no-nested-ternary": 1,
-    "no-unneeded-ternary": [1, { "defaultAssignment": false }],
-    "no-var": 1,
-    "eqeqeq": [1, "always"],
-    "no-return-assign": 1,
-    "no-multi-str": 1,
     "func-call-spacing": [1, "never"],
     "function-paren-newline": [1, "multiline"],
+
+    "react/jsx-closing-bracket-location": [1, "line-aligned"],
+    "react/jsx-closing-tag-location": 1,
+    "react/jsx-equals-spacing": [1, "never"],
+    "react/jsx-indent": [1, 2],
+    "react/jsx-tag-spacing": [1, {
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never"
+    }],
+    "react/jsx-wrap-multilines": [1, {
+      "declaration": false,
+      "assignment": false,
+      "return": true
+    }],
+
+    // Warning
+    "array-callback-return": 1,
+    "curly": [1, "all"],
+    "eqeqeq": [1, "always"],
+    "linebreak-style": [1, "unix"],
+    "lines-between-class-members": [1, "always", {"exceptAfterSingleLine": true}],
+    "line-comment-position": [1, "above"],
+    "newline-after-var": [1, "always"],
+    "newline-before-return": 1,
+    "no-console": 0,
+    "no-constant-condition": [1, {"checkLoops": false}],
+    "no-debugger": 1,
+    "no-else-return": 1,
+    "no-inline-comments": 1,
+    "no-multi-assign": 1,
+    "no-multi-str": 1,
+    "no-nested-ternary": 1,
+    "no-return-assign": 1,
+    "no-undef": 1,
+    "no-unneeded-ternary": [1, { "defaultAssignment": false }],
+    "no-unreachable": 1,
+    "no-unused-vars": [1, { "vars": "all", "args": "after-used" }],
+    "no-useless-constructor": 1,
+    "no-var": 1,
+    "no-warning-comments": [1, { "terms": ["fixme", "todo", "hack", "review", "xxx"] }],
+    "no-return-await": 1,
+    "no-throw-literal": 1,
+    "require-await": 1,
+    "padding-line-between-statements": [
+      1,
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let"], "next": "*"},
+      { "blankLine": "any",    "prev": ["const", "let"], "next": ["const", "let"]}
+    ],
+    "prefer-arrow-callback": 1,
+    "prefer-const": 1,
+    "spaced-comment": [1, "always", { "exceptions": ["-"] }],
 
     // React
 
@@ -106,7 +134,6 @@
     "react/jsx-max-props-per-line": 0,
     "react/jsx-no-comment-textnodes": 0,
     "react/jsx-no-literals": 0,
-    "react/no-unescaped-entities": 0,
     "react/jsx-sort-props": 0,
 
     // Warning
@@ -123,6 +150,7 @@
     "react/no-redundant-should-component-update": 1,
     "react/no-string-refs": 1,
     "react/no-typos": 1,
+    "react/no-unescaped-entities": [1, {"forbid": [">", "}"]}],
     "react/no-unused-prop-types": 1,
     "react/prefer-es6-class": [1, "always"],
     "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
@@ -142,27 +170,13 @@
     "react/void-dom-elements-no-children": 1,
 
     "react/jsx-boolean-value": [1, "never"],
-    "react/jsx-closing-bracket-location": [1, "line-aligned"],
-    "react/jsx-closing-tag-location": 1,
-    "react/jsx-equals-spacing": [1, "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": [1, 2],
     "react/jsx-no-bind": [1, {
       "ignoreRefs": true,
       "allowArrowFunctions": true
     }],
     "react/jsx-no-target-blank": 1,
     "react/jsx-pascal-case": 1,
-    "react/jsx-tag-spacing": [1, {
-      "closingSlash": "never",
-      "beforeSelfClosing": "always",
-      "afterOpening": "never"
-    }],
-    "react/jsx-wrap-multilines": [1, {
-      "declaration": false,
-      "assignment": false,
-      "return": true
-    }],
 
     // eslint-plugin-compat
     "compat/compat": 1
@@ -199,11 +213,11 @@
       }
     },
 
-    // Test files inside `app`
+    // Test files
     {
-      "files": ["app/**/*.spec.js"],
+      "files": ["**/*.spec.js"],
       "env": {
-        "mocha": true
+        "jest": true
       }
     }
   ]

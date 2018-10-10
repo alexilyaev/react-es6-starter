@@ -44,6 +44,7 @@ module.exports = {
     'custom-property-pattern': null,
     'font-family-name-quotes': 'always-where-recommended',
     'font-family-no-duplicate-names': true,
+    'font-family-no-missing-generic-family-keyword': true,
     'font-weight-notation': null,
     'function-blacklist': null,
     'function-calc-no-unspaced-operator': true,
@@ -155,6 +156,8 @@ module.exports = {
         message: 'Class names should be dash-cased. Pattern: "^[a-z0-9\\-]+$"'
       }
     ],
+    'selector-combinator-blacklist': null,
+    'selector-combinator-whitelist': null,
     'selector-attribute-operator-blacklist': null,
     'selector-attribute-operator-whitelist': null,
     'selector-combinator-space-after': 'always',
@@ -182,6 +185,8 @@ module.exports = {
     'selector-pseudo-class-parentheses-space-inside': 'never',
     'selector-pseudo-class-blacklist': null,
     'selector-pseudo-class-whitelist': null,
+    'selector-pseudo-element-blacklist': null,
+    'selector-pseudo-element-whitelist': null,
     'selector-pseudo-element-case': 'lower',
     'selector-pseudo-element-colon-notation': 'double',
     'selector-pseudo-element-no-unknown': true,
@@ -212,6 +217,7 @@ module.exports = {
     'max-line-length': 100,
     'max-nesting-depth': null,
     'no-descending-specificity': true,
+    'no-duplicate-at-import-rules': true,
     'no-duplicate-selectors': true,
     'no-empty-source': true,
     'no-eol-whitespace': true,
