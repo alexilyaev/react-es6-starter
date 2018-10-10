@@ -19,7 +19,8 @@
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "legacyDecorators": true
     },
     "sourceType": "script"
   },

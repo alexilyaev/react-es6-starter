@@ -6,14 +6,10 @@
 import React from 'react';
 
 export default class ErrorBoundary extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      error: null,
-      errorInfo: null
-    };
-  }
+  state = {
+    error: null,
+    errorInfo: null
+  };
 
   componentDidCatch(error, errorInfo) {
     // Catch errors in any components below and re-render with error message

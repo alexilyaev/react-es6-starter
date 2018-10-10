@@ -94,7 +94,6 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              root: appPath,
               sourceMap: isDevelopment
             }
           },

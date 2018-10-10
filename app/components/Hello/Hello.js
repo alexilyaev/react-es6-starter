@@ -4,13 +4,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class Hello extends React.Component {
-  constructor() {
-    super();
+  static propTypes = {
+    message: PropTypes.string
+  };
 
-    this.state = {
-      now: new Date().toLocaleTimeString()
-    };
-  }
+  static defaultProps = {
+    message: 'Hello World'
+  };
+
+  state = {
+    now: new Date().toLocaleTimeString()
+  };
 
   componentDidMount() {
     this.interval = setInterval(() => {
@@ -36,11 +40,3 @@ export default class Hello extends React.Component {
     );
   }
 }
-
-Hello.propTypes = {
-  message: PropTypes.string
-};
-
-Hello.defaultProps = {
-  message: 'Hello World'
-};

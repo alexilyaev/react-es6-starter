@@ -1,12 +1,31 @@
 {
   "presets": [
-    ["es2015", { "modules": false }],
-    "react",
-    "stage-2"
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltIns": false,
+        "debug": false
+      }
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
-    "react-hot-loader/babel",
-    "transform-runtime",
-    "transform-decorators-legacy"
-  ]
+    "@babel/plugin-transform-destructuring",
+    "@babel/plugin-proposal-object-rest-spread",
+    // Must come before `plugin-proposal-class-properties`
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    // Enable loose mode to use assignment instead of defineProperty
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    // Polyfills the runtime needed for async/await and generators
+    ["@babel/plugin-transform-runtime", {
+      "helpers": false,
+      "regenerator": true
+    }]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    }
+  }
 }
