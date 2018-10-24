@@ -145,6 +145,20 @@ const config = {
     ]
   },
 
+  optimization: {
+    // https://webpack.js.org/plugins/split-chunks-plugin/
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          enforce: true,
+          chunks: 'initial'
+        }
+      }
+    }
+  },
+
   // Settings for webpack-dev-server
   // https://webpack.js.org/configuration/dev-server/
   // `--hot` must be set using CLI, will set `hot` and add HotModuleReplacementPlugin automatically
