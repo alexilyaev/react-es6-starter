@@ -7,18 +7,20 @@
 
 ## Features
 
-- Webpack 3
-  - Transpiles `.js` files using Babel (settings in `.babelrc`)
-  - Transpiles `.scss` files using node-sass
-  - ESLint - Lints `js` files on changes (rules in `.eslintrc`)
-  - Stylelint - Lints `scss` files on changes (rules in `.stylelintrc`)
-  - PostCSS plugins (settings in `postcss.config.js`)
+- **Webpack 4**
+  - Transpiles `.js` files using **Babel 7** (settings in `.babelrc`)
+  - Transpiles `.scss` files using **node-sass**
+  - **ESLint** - Lints `js` files on changes (rules in `.eslintrc`)
+  - **Stylelint** - Lints `scss` files on changes (rules in `.stylelintrc`)
+  - **PostCSS** plugins (settings in `postcss.config.js`)
     - Autoprefixer (supported browsers list in `browserslist` file)
+    - cssnano - To compress the resulting CSS
   - Dynamic `index.html` generation
   - Dynamic build file names with hash for cache busting
+  - Automatically builds a `vendor` bundle with all packages imported from `node_modules`
 - React
-  - React Hot Loader v3
-  - React Router v4
+  - **React Hot Loader v4** - Simplified hot reloading setup
+  - **React Router v4**
     - HTML5 History API (non hash routes)
 
 ## Getting Started
