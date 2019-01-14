@@ -1,7 +1,7 @@
 import './Root.scss';
 
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 
 import Hello from '../Hello/Hello';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
@@ -24,4 +24,4 @@ class Root extends React.Component {
   }
 }
 
-export default hot(module)(Root);
+export default hot(Root);
