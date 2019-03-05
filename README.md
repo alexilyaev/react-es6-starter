@@ -59,6 +59,6 @@ npm run build
 ### To run the build locally
 
 ```
-npm i -g live-server
-live-server --mount=/:dist --entry-file=dist/index.html
+npm i -g serve
+serve -s dist
 ```

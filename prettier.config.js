@@ -13,7 +13,7 @@ module.exports = {
   htmlWhitespaceSensitivity: 'css',
   jsxBracketSameLine: false,
   jsxSingleQuote: false,
-  printWidth: 100, // default: 80
+  printWidth: 80, // default: 80
   proseWrap: 'preserve',
   semi: true,
   singleQuote: true, // default: false
