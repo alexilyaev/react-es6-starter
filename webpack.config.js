@@ -147,6 +147,7 @@ const config = {
 
   optimization: {
     // https://webpack.js.org/plugins/split-chunks-plugin/
+    // https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0
     splitChunks: {
       cacheGroups: {
         vendor: {
