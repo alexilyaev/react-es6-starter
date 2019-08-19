@@ -8,7 +8,7 @@
     "stats": "cross-env NODE_ENV=production webpack --profile --json > stats.json",
     "base-stylelint": "stylelint --syntax scss --ignore-path .gitignore",
     "base-prettier": "prettier --ignore-path .gitignore",
-    "base-eslint": "eslint --ignore-path .gitignore --rule 'no-console: 1'",
+    "base-eslint": "eslint --ignore-path .gitignore --rule \"no-console: 1\"",
     "format": "npm run base-eslint -- --fix \"**/*.js\" && npm run base-prettier -- --write \"**/*.js\" && npm run base-stylelint -- --fix \"**/*.scss\"",
     "lint-css": "npm run base-stylelint -- \"**/*.scss\"",
     "lint-prettier": "npm run base-prettier -- -l \"**/*.js\"",
